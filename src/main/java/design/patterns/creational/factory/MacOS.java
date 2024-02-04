@@ -6,4 +6,8 @@ public class MacOS implements OperatingSystem {
     public void show() {
         System.out.println("I am mac operating system.");
     }
+
+    public int sum(int a, int b){
+        return a+b;
+    }
 }

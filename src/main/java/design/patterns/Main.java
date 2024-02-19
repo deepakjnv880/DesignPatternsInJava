@@ -12,6 +12,8 @@ import design.patterns.creational.prototype.Library;
 import design.patterns.structural.adapter.Charger;
 import design.patterns.structural.adapter.ChargerAdapter;
 import design.patterns.structural.adapter.SamsungMobile;
+import design.patterns.structural.adapter.myExample.ChargerAdapterForCFromB;
+import design.patterns.structural.adapter.myExample.MobileCType;
 import design.patterns.structural.composite.Component;
 import design.patterns.structural.composite.CompositeNode;
 import design.patterns.structural.composite.LeafNode;
@@ -35,7 +37,7 @@ public class Main {
         Library library2 = new Library("LibraryName2");
         library2.loadBooks();//see we are again loading book which is time expensive
         System.out.println(library2);
-        Library library3 = library1.clone();//with simple inbuilt clone it will be shallow copy so we override the clone method for deep copy
+        Library library3 = library1.clone();//with simple inbuilt clone it will be shallow copy, so we override the clone method for deep copy
         library3.setName("LibraryName3");
         System.out.println(library3);
 
@@ -43,10 +45,14 @@ public class Main {
         System.out.println("\n------>Structural design patterns<------");
         System.out.println("=======Adapter design pattern=======");
         SamsungMobile samsungMobile = new SamsungMobile();
-        //You don't have implementation of charger or you don't have samsung charger.
+        //You don't have implementation of charger, or you don't have samsung charger.
         Charger charger = new ChargerAdapter();//Now you can charge your samsung phone with nokia charger
         samsungMobile.setCharger(charger);
         samsungMobile.charge();
+        //Using my example
+        MobileCType mobileCType = new MobileCType();
+        mobileCType.setCharge(new ChargerAdapterForCFromB());
+        mobileCType.getCharge().charge();
         System.out.println("=======Composite design pattern=======");
         Component ram = new LeafNode("RAM", 1500);
         Component hdd = new LeafNode("HDD", 1000);

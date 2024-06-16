@@ -1,6 +1,5 @@
-package design.patterns.creational.Decorator;
+package design.patterns.structural.Decorator;
 
-//
 public class Lassi extends ExtraDecorator {
     Biryani biryani;
 

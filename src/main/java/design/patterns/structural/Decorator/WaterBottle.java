@@ -1,4 +1,4 @@
-package design.patterns.creational.Decorator;
+package design.patterns.structural.Decorator;
 
 public class WaterBottle extends ExtraDecorator {
     Biryani biryani;

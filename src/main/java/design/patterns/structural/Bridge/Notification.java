@@ -1,4 +1,6 @@
-package design.patterns.structural.Bridge;;
+package design.patterns.structural.Bridge;
+
+;
 
 public abstract class Notification {
     NotificationSender notificationSender;

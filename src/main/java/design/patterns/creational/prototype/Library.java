@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library implements Cloneable {
-    String name;
     public List<Book> books = new ArrayList<>();
+    String name;
+
+    public Library(String name) {
+        this.name = name;
+    }
 
     public void loadBooks() {
         //in actual in might be connected to database to load books and hence time taking operation
@@ -13,10 +17,6 @@ public class Library implements Cloneable {
         for (int i = 1; i <= 7; i++) {
             books.add(new Book(i, "Book " + i));
         }
-    }
-
-    public Library(String name) {
-        this.name = name;
     }
 
     public void setName(String name) {

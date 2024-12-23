@@ -1,9 +1,9 @@
 package design.patterns;
 
-import design.patterns.behavioral.observer.Channel;
-import design.patterns.behavioral.observer.Object;
-import design.patterns.behavioral.observer.Subject;
-import design.patterns.behavioral.observer.Subscriber;
+import design.patterns.behavioral.observer.subscriberChannel.Channel;
+import design.patterns.behavioral.observer.subscriberChannel.Object;
+import design.patterns.behavioral.observer.subscriberChannel.Subject;
+import design.patterns.behavioral.observer.subscriberChannel.Subscriber;
 import design.patterns.creational.builder.Phone;
 import design.patterns.creational.builder.PhoneBuilder;
 import design.patterns.creational.factory.OperatingSystem;
@@ -17,6 +17,10 @@ import design.patterns.structural.adapter.myExample.MobileCType;
 import design.patterns.structural.composite.Component;
 import design.patterns.structural.composite.CompositeNode;
 import design.patterns.structural.composite.LeafNode;
+
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -32,7 +36,7 @@ public class Main {
         System.out.println(phone);
         System.out.println("=======Prototype design pattern=======");
         Library library1 = new Library("LibraryName1");
-        library1.loadBooks();
+        library1.loadBooks();//load book might be calling making costly JDBC or API call
         System.out.println(library1);
         Library library2 = new Library("LibraryName2");
         library2.loadBooks();//see we are again loading book which is time expensive
@@ -91,5 +95,16 @@ public class Main {
 
 
         System.out.println("\n*****************************************************************");
+
+        Map<String,Integer> map=new LinkedHashMap<>();
+        map.put("deepak",2);
+        map.put("avin",3);
+        map.put("Praveen",1);
+        map.put("avin",420);
+
+        for(String s:map.keySet()){
+            System.out.println(s+"=="+map.get(s));
+        }
+
     }
 }

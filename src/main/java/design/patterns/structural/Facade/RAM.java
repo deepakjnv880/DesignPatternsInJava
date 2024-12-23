@@ -1,4 +1,4 @@
-package design.patterns.creational.Facade;
+package design.patterns.structural.Facade;
 
 public class RAM {
     boolean checkRAMOnBoot() {

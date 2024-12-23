@@ -1,4 +1,4 @@
-package design.patterns.behavioral.observer;
+package design.patterns.behavioral.observer.subscriberChannel;
 
 import java.util.List;
 
